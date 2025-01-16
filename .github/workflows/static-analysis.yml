@@ -1,0 +1,47 @@
+name: Static Analysis
+
+on:
+  push:
+    branches:
+      - '**'  # すべてのブランチを対象
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        npm install -g htmlhint
+        npm install -g stylelint@14.16.1 stylelint-config-standard@29.0.0
+        npm install -g eslint eslint-config-standard
+
+    - name: HTML Lint
+      run: |
+        htmlhint "**/*.html"
+        
+    - name: CSS Lint
+      run: |
+        stylelint "**/*.css" --config .stylelintrc.json
+
+    - name: Check for broken links
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      
+    - name: Validate HTML
+      uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+      with:
+        root: .
+        
+    - name: Check performance with Lighthouse
+      uses: treosh/lighthouse-ci-action@v9
+      with:
+        urls: |
+          https://your-site-url.com
+        uploadArtifacts: true
