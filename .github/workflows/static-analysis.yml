@@ -22,7 +22,7 @@ jobs:
     - name: Install dependencies
       run: |
         npm install -g htmlhint
-        npm install -g stylelint stylelint-config-standard
+        npm install -g stylelint@14.16.1 stylelint-config-standard@29.0.0
         npm install -g eslint eslint-config-standard
 
     - name: HTML Lint
@@ -35,7 +35,7 @@ jobs:
 
     - name: JavaScript Lint
       run: |
-        eslint "**/*.js" --config .eslintrc.json
+        node --no-experimental-fetch -r eslint/lib/cli.js "**/*.js" --config .eslintrc.json
 
     - name: Check for broken links
       uses: gaurav-nelson/github-action-markdown-link-check@v1
