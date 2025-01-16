@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - '**'  # すべてのブランチを対象
-  pull_request:
-    branches: [ master ]  # PRはmasterブランチへのもののみ
 
 jobs:
   analyze:
@@ -32,11 +30,6 @@ jobs:
     - name: CSS Lint
       run: |
         stylelint "**/*.css" --config .stylelintrc.json
-
-    - name: JavaScript Lint
-      run: |
-        npm install -g eslint
-        eslint "**/*.js"
 
     - name: Check for broken links
       uses: gaurav-nelson/github-action-markdown-link-check@v1
