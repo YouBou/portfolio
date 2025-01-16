@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins, sans-serif;
 }
 
 /* reset */
@@ -18,7 +18,7 @@ html {
 }
 
 p {
-    color: rgb(85, 85, 85);
+    color: rgb(85 85 85);
 }
 
 /* transition */
@@ -51,32 +51,25 @@ a,
     border-radius: 2rem;
 }
 
-.btn-color-1,
-.btn-color-2 {
-    border: rgb(53, 53, 53) 0.1rem solid;
-}
-
-.btn-color-1:hover,
-.btn-color-2:hover {
-    cursor: pointer;
-}
-
-.btn-color-1,
-.btn-color-1:hover {
-    background: rgb(53, 53, 53);
+.btn-color-1 {
+    border: rgb(53 53 53) 0.1rem solid;
+    background: rgb(53 53 53);
     color: white;
 }
 
 .btn-color-1:hover {
-    background: rgb(0, 0, 0);
+    cursor: pointer;
+    background: rgb(0 0 0);
 }
 
 .btn-color-2 {
+    border: rgb(53 53 53) 0.1rem solid;
     background: none;
 }
 
 .btn-color-2:hover {
-    border: rgb(255, 255, 255) 0.1rem solid;
+    cursor: pointer;
+    border: rgb(255 255 255) 0.1rem solid;
 }
 
 
