@@ -226,7 +226,7 @@ section {
   color: rgb(85 85 85);
   font-weight: 600;
   font-size: 1.75rem;
-  mergin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .experience-details-container {
@@ -238,8 +238,7 @@ section {
 .article-container {
   display: flex;
   text-align: initial;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-flow: row wrap;
   gap: 2.5rem;
   justify-content: space-around;
 }
