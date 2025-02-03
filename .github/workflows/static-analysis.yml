@@ -38,10 +38,3 @@ jobs:
       uses: Cyb3r-Jak3/html5validator-action@v7.2.0
       with:
         root: .
-        
-    - name: Check performance with Lighthouse
-      uses: treosh/lighthouse-ci-action@v9
-      with:
-        urls: |
-          https://your-site-url.com
-        uploadArtifacts: true
