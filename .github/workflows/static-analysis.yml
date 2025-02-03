@@ -43,5 +43,5 @@ jobs:
       uses: treosh/lighthouse-ci-action@v9
       with:
         urls: |
-          https://your-site-url.com
+          file:///github/workspace/index.html
         uploadArtifacts: true
