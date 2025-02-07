@@ -151,6 +151,10 @@ section {
   height: 80vh;
 }
 
+.bio-img {
+  border-radius: 50%;
+}
+
 .section__pic-container {
   display: flex;
   height: 400px;
